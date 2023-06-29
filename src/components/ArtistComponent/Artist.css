@@ -7,6 +7,7 @@
   color: white;
   font-family: "Helvetica", Arial, sans-serif;
   text-transform: uppercase;
+  transition: background-color 0.3s;
 }
 
 .Card-image {
@@ -21,4 +22,8 @@
   padding: 10px;
   font-style: italic;
   margin-top: auto;
+}
+
+.Card:hover {
+  background-color: #525a69;
 }

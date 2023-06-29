@@ -106,7 +106,7 @@ function App() {
     }
 
     postData();
-  }, [collection, history, user]);
+  }, [collection, history, user, isDataLoaded]);
 
   return (
     <div className="App">
