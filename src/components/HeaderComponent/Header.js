@@ -5,11 +5,6 @@ function Header() {
   return (
     <div>
       <div>
-        <NavLink to="/" exact>
-          Home
-        </NavLink>
-      </div>
-      <div>
         <NavLink to="/viewing-room" exact>
           Viewing Room
         </NavLink>

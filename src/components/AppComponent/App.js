@@ -7,7 +7,6 @@ import {
 } from "react-router-dom/cjs/react-router-dom.min";
 import "./App.css";
 import Header from "../HeaderComponent/Header";
-import Home from "../HomeComponent/Home";
 import ViewingRoom from "../ViewingRoomComponent/ViewingRoom";
 import Artists from "../ArtistsComponent/Artists";
 import ArtistPage from "../ArtistPageComponent/ArtistPage";
