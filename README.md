@@ -8,7 +8,6 @@ The paraphrased information and art are sourced from wikipedia. This project was
 The backend for this project can be found [here](https://github.com/fullstackstorm/json-server-brushstrokes-backend).
 
 ## Installation 
----
 
 To run this web application, follow the steps below:
 
@@ -56,7 +55,6 @@ To run this web application, follow the steps below:
 The Brushstroke Boutique should now be running in your web browser. Start interacting with the application and enjoy!
 
 ## Usage
----
 
 1. Open the web application in your web browser by following the installation instructions mentioned above.
 
@@ -71,14 +69,12 @@ form in order to collect their art for your personal gallery.
 5. The Boutique will redirect you to your art collection so that you can view your most favored pieces.
 
 ## Contributing
----
 
 You are welcome to fork this repository and make changes, but I will not be accepting these changes.
 This project is designed for me to sharpen my web development skills overtime.
 
 
 ## Works Cited
----
 
 "Eugène Delacroix." Wikipedia, Wikimedia Foundation, 29 May 2023.  
 [en.wikipedia.org/wiki/Eugène_Delacroix](en.wikipedia.org/wiki/Eug%C3%A8ne_Delacroix)
