@@ -6,6 +6,7 @@ import Home from "../HomeComponent/Home";
 import ViewingRoom from "../ViewingRoomComponent/ViewingRoom";
 import Artists from "../ArtistsComponent/Artists";
 import ArtistPage from "../ArtistPageComponent/ArtistPage";
+import PersonalCollection from "../PersonalCollectionComponent/PersonalCollection";
 
 function App() {
   const [gallery, setGallery] = useState([]);
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/artists">
           <Artists artists={artists} />
+        </Route>
+        <Route path="personal-collection">
+          <PersonalCollection />
         </Route>
         <Route exact path="/">
           <Home />

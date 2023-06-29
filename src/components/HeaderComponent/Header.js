@@ -19,6 +19,11 @@ function Header() {
           Artists
         </NavLink>
       </div>
+      <div>
+        <NavLink to="/personal-collection" exact>
+          Your Art Collection
+        </NavLink>
+      </div>
     </div>
   );
 }
