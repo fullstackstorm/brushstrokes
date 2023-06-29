@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom";
+import "./Header.css";
 
 function Header() {
   return (
-    <div>
-      <div>
+    <div className="App-header">
+      <div >
         <NavLink to="/viewing-room" exact>
           Viewing Room
         </NavLink>
