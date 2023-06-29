@@ -6,9 +6,9 @@ function Artist({ artist }) {
 
   return (
     <Link to={{ pathname: `${match.url}/${artist.id}`, state: { artist } }}>
-      <div>
-        <img src={artist.image} alt={`self-portrait of ${artist.name}`} />
-        <h2>{artist.name}</h2>
+      <div className="Card">
+        <img className="Card-image" src={artist.image} alt={`self-portrait of ${artist.name}`} />
+        <h2 className="Card-artist">{artist.name}</h2>
       </div>
     </Link>
   );
