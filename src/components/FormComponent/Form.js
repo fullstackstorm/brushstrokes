@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form({ artist }) {
+function Form({ artist, setCollection }) {
   const [name, setName] = useState("");
 
   const handleNameChange = (event) => {
@@ -9,7 +9,7 @@ function Form({ artist }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(name);
+    setCollection(name, artist.name)
     setName("");
   }
 

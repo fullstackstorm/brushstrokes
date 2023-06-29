@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import React from "react";
 import Form from "../FormComponent/Form";
 
-function ArtistPage() {
+function ArtistPage({ setCollection }) {
   const location = useLocation();
   const artist = location.state.artist;
 
@@ -15,7 +15,7 @@ function ArtistPage() {
       </h3>
       <p>{artist.biography}</p>
       <img src={artist.signature} alt="artist's signature" />
-      <Form artist={artist}></Form>
+      <Form artist={artist} setCollection={setCollection}></Form>
       <br />
     </div>
   );

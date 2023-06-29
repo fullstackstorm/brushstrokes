@@ -11,6 +11,7 @@ import PersonalCollection from "../PersonalCollectionComponent/PersonalCollectio
 function App() {
   const [gallery, setGallery] = useState([]);
   const [artists, setArtists] = useState([]);
+  const [collection, setCollection] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -30,6 +31,46 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    async function fetchData() {
+      return await fetch("http://localhost:3001/collection")
+        .then((r) => r.json())
+        .then((data) => {
+          if (Object.keys(data).length !== 0) {
+            setCollection(data);
+          }
+        });
+    }
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log(collection);
+  }, [collection]);
+
+  function handleCollectionUpdate(name, artistName) {
+    const artistCollection = gallery.filter(
+      (painting) => painting.artist === artistName
+    );
+    setCollection((prevCollection) => [...prevCollection, ...artistCollection]);
+  }
+  
+  useEffect(() => {
+    if (collection.length > 0) {
+      async function postData() {
+        await fetch("http://localhost:3001/collection", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(collection),
+        });
+      }
+  
+      postData();
+    }
+  }, [collection]);
+
   return (
     <div className="App">
       <Header />
@@ -38,13 +79,13 @@ function App() {
           <ViewingRoom gallery={gallery} />
         </Route>
         <Route path="/artists/:id">
-          <ArtistPage />
+          <ArtistPage setCollection={handleCollectionUpdate} />
         </Route>
         <Route path="/artists">
           <Artists artists={artists} />
         </Route>
-        <Route path="personal-collection">
-          <PersonalCollection />
+        <Route path="/personal-collection">
+          <PersonalCollection collection={collection} />
         </Route>
         <Route exact path="/">
           <Home />
