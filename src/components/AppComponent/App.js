@@ -3,6 +3,7 @@ import {
   Route,
   Switch,
   useHistory,
+  Redirect,
 } from "react-router-dom/cjs/react-router-dom.min";
 import "./App.css";
 import Header from "../HeaderComponent/Header";
@@ -18,6 +19,7 @@ function App() {
   const [artists, setArtists] = useState([]);
   const [collection, setCollection] = useState([]);
   const [user, setUser] = useState({});
+  const [isDataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -73,6 +75,7 @@ function App() {
     );
     setCollection((prevCollection) => [...prevCollection, ...artistCollection]);
     setUser({ name: name });
+    setDataLoaded(true);
   }
 
   useEffect(() => {
@@ -98,8 +101,9 @@ function App() {
           body: JSON.stringify(collection),
         });
       }
-
-      history.push("/personal-collection");
+      if (isDataLoaded) {
+        history.push("/personal-collection");
+      }
     }
 
     postData();
@@ -109,9 +113,6 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Route path="/viewing-room">
-          <ViewingRoom gallery={gallery} />
-        </Route>
         <Route path="/artists/:id">
           <ArtistPage setCollection={handleCollectionUpdate} />
         </Route>
@@ -121,8 +122,14 @@ function App() {
         <Route path="/personal-collection">
           <PersonalCollection user={user} collection={collection} />
         </Route>
+        <Route path="/viewing-room">
+          <ViewingRoom gallery={gallery} />
+        </Route>
         <Route exact path="/">
-          <Home />
+          <Redirect to="/viewing-room" />
+        </Route>
+        <Route path="*">
+          <Redirect to="/viewing-room" />
         </Route>
       </Switch>
     </div>
