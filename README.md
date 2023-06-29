@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Brushstroke Boutique
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Brushstroke Boutique is a tiny slice of late 18th and 19th century art. Enjoy viewing the 
+various painting without having to go to a museum! Learn about the artists and save their work
+to you personal art gallery so that you can view your favorites at any time. 
 
-## Available Scripts
+The paraphrased information and art are sourced from wikipedia. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The backend for this project can be found [here](https://github.com/fullstackstorm/json-server-brushstrokes-backend)
 
-In the project directory, you can run:
+## Installation 
+---
 
-### `npm start`
+To run this web application, follow the steps below:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Fork and clone the backend to your local machine using the following command:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```shell
+   git clone git@github.com:<username>/json-server-brushstrokes-backend.git
+   ```
+2. Navigate to the project directory:
 
-### `npm test`
+   ```shell
+   cd json-server-brushstrokes-backend
+   ``` 
+3. Install the required dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```shell
+   npm install
+   ```
+4. Start the application:
 
-### `npm run build`
+   ```shell
+   npm start
+   ```
+5. Open a new terminal and fork and clone the frontend to your local machine using the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```shell
+   git clone git@github.com:<username>/brushstrokes.git
+   ```
+6. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```shell
+   cd brushstrokes
+   ```
+7. Install the required dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```shell
+   npm install
+   ```
+8. Start the application:
 
-### `npm run eject`
+   ```shell
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The Brushstroke Boutique should now be running in your web browser. Start interacting with the application and enjoy!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Open the web application in your web browser by following the installation instructions mentioned above.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. On the main page, you will find a form where you can specify your preferences for activity suggestions.
 
-## Learn More
+3. Fill out the form by selecting from the number of participants, type of activity, and price range dropdown menus. The forms option include:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   - Number of Participants: 1-5
+   - Activity Type: relaxation, charity, recreational, busywork, education, social, cooking, diy, and music
+   - Price: `$`, `$$`, and `$$$`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   Each selection also offers a "random" option if you can't be bothered.
 
-### Code Splitting
+4. Once you have selected your desired parameter values, click on the "Submit" button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. The web application will generate six different cards tailored to your inputs. The more unlikely your input combination,
+the less likely the suggestions won't repeat themselves.
 
-### Analyzing the Bundle Size
+6. Explore the suggested activities displayed on the same page beside the form. Each card may include an option number, a suggestion, and the activity's accessibility.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+7. If you want to generate new suggestions, simply modify the form parameters, or don't, and click the "Submit" button again.
 
-### Making a Progressive Web App
+## Contributing
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+You are welcome to fork this repository and make changes, but I will not be accepting these changes.
+This project is designed for me to sharpen my web development skills overtime.
 
-### Advanced Configuration
+## Licensing
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The Bored API is governed by its own terms of use and licensing conditions. Please refer to the [Github Bored-API README](https://github.com/drewthoennes/Bored-API) for detailed information on how you can use the API.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Outside Sources
+---
 
-### `npm run build` fails to minify
+There are two image sources I used to fill in the favicon and web app tile images:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Image](https://media.istockphoto.com/vectors/human-brain-icon-vector-vector-id1005384502?b=1&k=6&m=1005384502&s=170x170&h=PdOvg3W7e4zhojBKV3mvXjzU4AA2m1Z9eN63bs_C6Vc=)
+
+*Image source: [iStock](https://www.istockphoto.com/)*
+
+![Image](https://images.freeimages.com/fic/images/icons/2711/free_icons_for_windows8_metro/128/brain.png?ref=findicons)
+
+*Image source: [FreeImages](https://www.freeimages.com/)*
