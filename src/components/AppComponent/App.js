@@ -1,13 +1,28 @@
-import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
-import './App.css';
-import Home from '../HomeComponent/Home';
-import ViewingRoom from '../ViewingRoomComponent/ViewingRoom';
+import React, { useState, useEffect } from "react";
+import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import "./App.css";
+import Home from "../HomeComponent/Home";
+import ViewingRoom from "../ViewingRoomComponent/ViewingRoom";
 
 function App() {
+  const [gallery, setGallery] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      return await fetch("http://localhost:3001/gallery")
+        .then((r) => r.json())
+        .then((data) => setGallery(data));
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <Switch>
-        <Route exact path={["/", "/viewing-room", "/artists"]}>
+        <Route path="/viewing-room">
+          <ViewingRoom gallery={gallery} />
+        </Route>
+        <Route exact path="/">
           <Home />
         </Route>
       </Switch>
