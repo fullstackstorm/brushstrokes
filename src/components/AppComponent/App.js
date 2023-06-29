@@ -8,12 +8,22 @@ import Artists from "../ArtistsComponent/Artists";
 
 function App() {
   const [gallery, setGallery] = useState([]);
+  const [artists, setArtists] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       return await fetch("http://localhost:3001/gallery")
         .then((r) => r.json())
         .then((data) => setGallery(data));
+    }
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      return await fetch("http://localhost:3001/artists")
+        .then((r) => r.json())
+        .then((data) => setArtists(data));
     }
     fetchData();
   }, []);
@@ -26,7 +36,7 @@ function App() {
           <ViewingRoom gallery={gallery} />
         </Route>
         <Route path="/artists">
-          <Artists gallery={gallery} />
+          <Artists artists={artists} />
         </Route>
         <Route exact path="/">
           <Home />

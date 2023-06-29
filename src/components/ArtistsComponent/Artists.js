@@ -1,7 +1,5 @@
 import React from "react";
 
-function Artists() {
-
-}
+function Artists({ artists }) {}
 
 export default Artists;
