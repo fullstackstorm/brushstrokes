@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import "./App.css";
+import Header from "../HeaderComponent/Header";
 import Home from "../HomeComponent/Home";
 import ViewingRoom from "../ViewingRoomComponent/ViewingRoom";
 
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Switch>
         <Route path="/viewing-room">
           <ViewingRoom gallery={gallery} />
