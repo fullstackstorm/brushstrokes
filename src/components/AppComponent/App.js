@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  Route,
+  Switch,
+  useHistory,
+} from "react-router-dom/cjs/react-router-dom.min";
 import "./App.css";
 import Header from "../HeaderComponent/Header";
 import Home from "../HomeComponent/Home";
@@ -9,9 +13,11 @@ import ArtistPage from "../ArtistPageComponent/ArtistPage";
 import PersonalCollection from "../PersonalCollectionComponent/PersonalCollection";
 
 function App() {
+  const history = useHistory();
   const [gallery, setGallery] = useState([]);
   const [artists, setArtists] = useState([]);
   const [collection, setCollection] = useState([]);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     async function fetchData() {
@@ -45,6 +51,19 @@ function App() {
   }, []);
 
   useEffect(() => {
+    async function fetchData() {
+      return await fetch("http://localhost:3001/user")
+        .then((r) => r.json())
+        .then((data) => {
+          if (Object.keys(data).length !== 0) {
+            setUser(data);
+          }
+        });
+    }
+    fetchData();
+  }, []);
+
+  useEffect(() => {
     console.log(collection);
   }, [collection]);
 
@@ -53,11 +72,24 @@ function App() {
       (painting) => painting.artist === artistName
     );
     setCollection((prevCollection) => [...prevCollection, ...artistCollection]);
+    setUser({ name: name });
   }
-  
+
   useEffect(() => {
-    if (collection.length > 0) {
-      async function postData() {
+    async function postData() {
+      if (user.length > 0) {
+        console.log(JSON.stringify(user));
+        await fetch("http://localhost:3001/user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        });
+      }
+
+      if (collection.length > 0) {
+        console.log(JSON.stringify(collection));
         await fetch("http://localhost:3001/collection", {
           method: "POST",
           headers: {
@@ -66,10 +98,12 @@ function App() {
           body: JSON.stringify(collection),
         });
       }
-  
-      postData();
+
+      history.push("/personal-collection");
     }
-  }, [collection]);
+
+    postData();
+  }, [collection, history, user]);
 
   return (
     <div className="App">
@@ -85,7 +119,7 @@ function App() {
           <Artists artists={artists} />
         </Route>
         <Route path="/personal-collection">
-          <PersonalCollection collection={collection} />
+          <PersonalCollection user={user} collection={collection} />
         </Route>
         <Route exact path="/">
           <Home />
