@@ -5,6 +5,7 @@ import Header from "../HeaderComponent/Header";
 import Home from "../HomeComponent/Home";
 import ViewingRoom from "../ViewingRoomComponent/ViewingRoom";
 import Artists from "../ArtistsComponent/Artists";
+import ArtistPage from "../ArtistPageComponent/ArtistPage";
 
 function App() {
   const [gallery, setGallery] = useState([]);
@@ -34,6 +35,9 @@ function App() {
       <Switch>
         <Route path="/viewing-room">
           <ViewingRoom gallery={gallery} />
+        </Route>
+        <Route path="/artists/:id">
+          <ArtistPage />
         </Route>
         <Route path="/artists">
           <Artists artists={artists} />
