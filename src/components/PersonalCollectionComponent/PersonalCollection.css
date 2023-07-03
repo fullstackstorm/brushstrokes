@@ -1,0 +1,10 @@
+.Collection-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Collection-title {
+  font-family: "Helvetica", Arial, sans-serif;
+  color: #282c34;
+}
