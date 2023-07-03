@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Form.css"
+import "./Form.css";
 
 function Form({ artist, setCollection }) {
   const [name, setName] = useState("");
@@ -10,9 +10,9 @@ function Form({ artist, setCollection }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setCollection(name, artist.name)
+    setCollection(name, artist.name);
     setName("");
-  }
+  };
 
   return (
     <div className="Form">
@@ -26,7 +26,9 @@ function Form({ artist, setCollection }) {
         <br />
         <input type="text" value={name} onChange={handleNameChange} />
         <br />
-        <button className="Form-button" type="submit">Submit</button>
+        <button className="Form-button" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

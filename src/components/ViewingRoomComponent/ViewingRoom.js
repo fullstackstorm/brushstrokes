@@ -1,6 +1,6 @@
 import React from "react";
 import Painting from "../PaintingComponent/Painting";
-import "./ViewingRoom.css"
+import "./ViewingRoom.css";
 
 function ViewingRoom({ gallery }) {
   return (

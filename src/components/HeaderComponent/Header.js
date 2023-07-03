@@ -5,7 +5,7 @@ import "./Header.css";
 function Header() {
   return (
     <div className="App-header">
-      <div >
+      <div>
         <NavLink to="/viewing-room" exact>
           Viewing Room
         </NavLink>

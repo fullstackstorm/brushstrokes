@@ -1,5 +1,5 @@
 import React from "react";
-import "./Painting.css"
+import "./Painting.css";
 
 function Painting({ painting }) {
   return (

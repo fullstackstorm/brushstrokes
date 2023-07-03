@@ -1,6 +1,6 @@
 import React from "react";
 import Artist from "../ArtistComponent/Artist";
-import "./Artists.css"
+import "./Artists.css";
 
 function Artists({ artists }) {
   return (
