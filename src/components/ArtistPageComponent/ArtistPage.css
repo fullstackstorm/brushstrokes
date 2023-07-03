@@ -1,0 +1,33 @@
+.artist-page {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.artist-page .floatingComponent {
+  width: 200px;
+  height: 200px;
+}
+
+.artist-page .life {
+  color: #777;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.artist-page .biography {
+  color: #555;
+  font-size: 16px;
+  margin: 200px;
+  margin-block-end: auto;
+  margin-top: 50px;
+  margin-left: 100px;
+  text-align: left;
+}
+
+.artist-page .signature {
+  max-width: 150px;
+  height: auto;
+}
