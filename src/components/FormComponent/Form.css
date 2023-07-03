@@ -1,0 +1,53 @@
+.Form {
+  width: 1000px;
+  margin: 50px;
+  margin-top: 20px;
+  background-color: #282c34;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-family: "Helvetica", Arial, sans-serif;
+  transition: background-color 0.3s;
+  padding: 50px;
+  position: relative;
+  text-align: left;
+}
+
+.Form-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.Form-prompt {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.Form-label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.Form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.Form-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  margin-top: 10px;
+}
+
+.Form-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Form.css"
 
 function Form({ artist, setCollection }) {
   const [name, setName] = useState("");
@@ -14,18 +15,18 @@ function Form({ artist, setCollection }) {
   }
 
   return (
-    <div>
-      <h3>Interested in this artist?</h3>
-      <p>
+    <div className="Form">
+      <h3 className="Form-title">Interested in this artist?</h3>
+      <p className="Form-prompt">
         Add their paintings to you personal art collection. Fill out the form
         below to add to your collection.
       </p>
-      <form onSubmit={handleSubmit}>
+      <form className="Form-prompt" onSubmit={handleSubmit}>
         To add {artist.name}'s art to your collection, input your name:
         <br />
         <input type="text" value={name} onChange={handleNameChange} />
         <br />
-        <button type="submit">Submit</button>
+        <button className="Form-button" type="submit">Submit</button>
       </form>
     </div>
   );
